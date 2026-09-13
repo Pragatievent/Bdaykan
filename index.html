@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Kanak</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Password Screen Overlay -->
+    <div class="password-screen" id="password-screen">
+        <div class="message-card">
+            <h2>Enter Password</h2>
+            <p>This surprise is locked just for you 🔒</p>
+            <input type="password" id="pass-input" placeholder="Enter password..." autocomplete="off">
+            <button id="action-btn" onclick="checkPassword()">Unlock</button>
+            <p id="pass-error" class="pass-error">Incorrect password, try again!</p>
+        </div>
+    </div>
+
+    <!-- Curved Fairy Lights Top Border -->
+    <div class="fairy-lights" id="fairy-lights">
+        <svg class="light-wire" viewBox="0 0 1000 100" preserveAspectRatio="none">
+            <path d="M 0,10 Q 500,85 1000,10" fill="none" stroke="#222" stroke-width="2"/>
+        </svg>
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <!-- Stage Curtains -->
+    <div class="curtain curtain-left" id="curtain-left"></div>
+    <div class="curtain curtain-right" id="curtain-right"></div>
+
+    <div id="app">
+        <!-- Main Stage Container -->
+        <div class="main-container" id="main-container">
+            <div class="message-card" id="message-card">
+                <h2 id="card-title">It's Your Special Day</h2>
+                <p id="card-desc">A CINEMATIC JOURNEY CREATED JUST FOR YOU</p>
+                <button id="action-btn" onclick="nextStep()">NEXT</button>
+            </div>
+        </div>
+
+        <!-- Tab 1: Special Message Section -->
+        <section class="page-section" id="special-message-section">
+            <div class="page-card">
+                <h2>My Dearest Kanak,</h2>
+                <p>Today isn't just a date on the calendar; it's a celebration of the light you bring into my life. Every moment with you is like a frame from a beautiful movie, and I'm so lucky to be your co-star. May this year be filled with as much magic as you give to everyone around you.</p>
+                <button class="memories-btn" onclick="showMemoriesTab()">Next: Our Memories ➔</button>
+            </div>
+        </section>
+
+        <!-- Tab 2: Memories Gallery Section (6 Photos) -->
+        <section class="page-section" id="memories-section">
+            <h2 class="gallery-title">Moments in Time</h2>
+            <p class="gallery-subtitle">Tap any framed photo to zoom in</p>
+            <div class="gallery-grid">
+                <div class="memory-card" onclick="openModal('FirstChat.jpg', 'Our First Chat ... i am soo happy that is did😭🫶🏻💗')">
+                    <div class="image-frame">
+                        <img src="FirstChat.jpg" alt="Memory" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb'">
+                    </div>
+                    <div class="memory-message">Our First Chat ... i am soo happy that is did😭🫶🏻💗</div>
+                </div>
+                <div class="memory-card" onclick="openModal('Conf.jpg', 'The day i confessed my love for you 💗...it was also on your special day💕')">
+                    <div class="image-frame">
+                        <img src="Conf.jpg" alt="Memory" onerror="this.src='https://images.unsplash.com/photo-1517841905240-472988babdf9'">
+                    </div>
+                    <div class="memory-message">The day i confessed my love for you 💗...it was also on your special day💕</div>
+                </div>
+                <div class="memory-card" onclick="openModal('Conf2.jpg', 'The day u confessed😭🫶🏻💗...it was sooo special day for me...💕')">
+                    <div class="image-frame">
+                        <img src="Conf2.jpg" alt="Memory" onerror="this.src='https://images.unsplash.com/photo-1524504388940-b1c1722653e1'">
+                    </div>
+                    <div class="memory-message">The day u confessed😭🫶🏻💗...it was sooo special day for me...💕</div>
+                </div>
+                <div class="memory-card" onclick="openModal('Prop.jpg', 'My official Proposal🫶🏻😭...yeahhh it was after 1 month of our relationship😅😂')">
+                    <div class="image-frame">
+                        <img src="Prop.jpg" alt="Memory" onerror="this.src='https://images.unsplash.com/photo-1494790108377-be9c29b29330'">
+                    </div>
+                    <div class="memory-message">My official Proposal🫶🏻😭...yeahhh it was after 1 month...</div>
+                </div>
+                <div class="memory-card" onclick="openModal('FirstVC3.jpg', 'Our first Video Call❤️')">
+                    <div class="image-frame">
+                        <img src="FirstVC3.jpg" alt="Memory" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d'">
+                    </div>
+                    <div class="memory-message">Our first Video Call❤️</div>
+                </div>
+                <div class="memory-card" onclick="openModal('Growtg.jpg', 'Uss growing together with our...Endless love❤️')">
+                    <div class="image-frame">
+                        <img src="Growtg.jpg" alt="Memory" onerror="this.src='https://images.unsplash.com/photo-1500648767791-00dcc994a43e'">
+                    </div>
+                    <div class="memory-message">Uss growing together with our...Endless love❤️</div>
+                </div>
+            </div>
+            <button class="memories-btn next-page-btn" onclick="showGiftTab()">Next: Special Gift 🎁 ➔</button>
+        </section>
+
+        <!-- Tab 3: Separate Gift Box Page -->
+        <section class="page-section" id="gift-section">
+            <div class="page-card gift-page-card">
+                <h2>A Special Gift For You</h2>
+                <div class="big-gift-box" onclick="openGiftModal()">
+                    <span class="big-gift-emoji">🎁</span>
+                    <p>Tap to Open Your Gift</p>
+                </div>
+                <button class="memories-btn" onclick="showVoiceNoteTab()">Next: Voice Note 🎙️ ➔</button>
+            </div>
+        </section>
+
+        <!-- Tab 4: Separate Voice Note Page -->
+        <section class="page-section" id="voicenote-section">
+            <div class="page-card voice-page-card">
+                <h2>A Voice Note For You</h2>
+                <p>Listen closely to what I have to say...</p>
+                <div class="voice-player-container">
+                    <span class="voice-mic">🎙️</span>
+                    <audio controls src="voicenote.mp3" class="full-audio-player" preload="none"></audio>
+                </div>
+                <button class="memories-btn" onclick="restartExperience()">Restart Experience ↻</button>
+            </div>
+        </section>
+
+        <!-- Zoom Modal / Lightbox View -->
+        <div class="image-modal" id="image-modal" onclick="closeModal()">
+            <span class="close-modal">&times;</span>
+            <div class="modal-content-wrapper" onclick="event.stopPropagation()">
+                <div class="zoomed-frame">
+                    <img id="modal-img" src="" alt="Zoomed Memory">
+                </div>
+                <p id="modal-desc"></p>
+            </div>
+        </div>
+
+        <!-- Gift Surprise Modal -->
+        <div class="image-modal" id="gift-modal" onclick="closeGiftModal()">
+            <span class="close-modal">&times;</span>
+            <div class="modal-content-wrapper gift-popup" onclick="event.stopPropagation()">
+                <h2>🎉 Surprise! 🎉</h2>
+                <p>You are the best thing that has ever happened to me. Thank you for filling my world with endless happiness and love! I love you forever! ❤️</p>
+            </div>
+        </div>
+
+        <!-- Audio Element -->
+        <audio id="birthday-audio" src="06. The Ronettes -  Be My Baby.mp3"></audio>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
