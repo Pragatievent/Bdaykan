@@ -252,9 +252,9 @@ body.lights-on .fairy-lights span:nth-child(3n) {
 .page-card {
     background: rgba(25, 25, 25, 0.95);
     border: 1px solid rgba(255, 102, 153, 0.3);
-    padding: 30px;
+    padding: 25px;
     border-radius: 15px;
-    max-width: 500px;
+    max-width: 480px;
     width: 100%;
     text-align: center;
     box-shadow: 0 10px 30px rgba(0,0,0,0.8);
@@ -262,16 +262,16 @@ body.lights-on .fairy-lights span:nth-child(3n) {
 
 .page-card h2 {
     color: #ff3366;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     font-family: serif;
-    font-size: clamp(22px, 5vw, 26px);
+    font-size: clamp(20px, 5vw, 24px);
 }
 
 .page-card p {
     font-size: clamp(12px, 3.5vw, 14px);
     line-height: 1.6;
     color: #ddd;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .memories-btn {
@@ -290,82 +290,99 @@ body.lights-on .fairy-lights span:nth-child(3n) {
 }
 
 .next-page-btn {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
-/* Memories Gallery Section */
-.gallery-title {
-    font-size: clamp(20px, 5vw, 26px);
-    margin-bottom: 5px;
-    font-style: italic;
-    color: #ffccd5;
-    text-align: center;
-}
-
-.gallery-subtitle {
-    font-size: 12px;
-    color: #888;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    max-width: 850px;
-    width: 100%;
-    justify-items: center;
-}
-
-.memory-card {
-    background: rgba(20, 20, 20, 0.9);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    padding: 10px;
-    border-radius: 12px;
-    width: 100%;
-    max-width: 250px;
+/* Memory Reveal Card Styles */
+.memory-reveal-card {
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+    min-height: 430px; /* Gives the card a stable height so it doesn't collapse */
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
 }
 
-.memory-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(255, 51, 102, 0.3);
-    border-color: rgba(255, 51, 102, 0.5);
+.cover-overlay {
+    position: absolute;
+    inset: 0; /* Perfectly stretches to cover all edges of the card */
+    background: linear-gradient(135deg, #2a0813, #15040a);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 3;
+    border-radius: 15px;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    padding: 20px;
+    border: 2px dashed rgba(255, 51, 102, 0.5);
+}
+
+.cover-overlay:hover {
+    border-color: #ff3366;
+    transform: scale(1.01);
+}
+
+.cover-icon {
+    font-size: 45px;
+    margin-bottom: 12px;
+    animation: bounce 1.5s infinite alternate;
+}
+
+.cover-overlay h2 {
+    color: #ffccd5;
+    margin-bottom: 6px;
+}
+
+.cover-overlay p {
+    color: #aaa;
+    font-size: 13px;
+    margin-bottom: 0;
+}
+
+.memory-page-title {
+    color: #ffccd5;
+    font-style: italic;
+    margin-bottom: 10px;
+    font-size: 16px;
 }
 
 .image-frame {
     width: 100%;
-    height: 120px;
-    background: #151515;
-    border-radius: 8px;
+    height: 250px;
+    background: #111;
+    border-radius: 10px;
     overflow: hidden;
     position: relative;
-    margin-bottom: 8px;
-    border: 1px solid rgba(255,255,255,0.1);
+    margin-bottom: 10px;
+    border: 1px solid rgba(255,255,255,0.15);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .image-frame img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain; /* Ensures the full photo is completely visible without cropping */
+    background: #000;
     transition: transform 0.5s ease;
 }
 
-.memory-card:hover .image-frame img {
-    transform: scale(1.05);
+.image-frame:hover img {
+    transform: scale(1.03);
 }
 
 .memory-message {
-    font-size: 11px;
+    font-size: 12px;
     color: #ffccd5;
     text-align: center;
-    padding: 4px 0;
+    margin-bottom: 12px;
+    line-height: 1.4;
 }
 
 /* Gift Page Styling */
@@ -530,21 +547,4 @@ body.lights-on .fairy-lights span:nth-child(3n) {
 @keyframes zoomIn {
     from { transform: scale(0.9); opacity: 0; }
     to { transform: scale(1); opacity: 1; }
-}
-
-@media (max-width: 900px) {
-    .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-        max-width: 520px;
-    }
-}
-
-@media (max-width: 520px) {
-    .gallery-grid {
-        grid-template-columns: 1fr;
-        max-width: 260px;
-    }
-    .fairy-lights span:nth-child(odd) {
-        display: none;
-    }
 }

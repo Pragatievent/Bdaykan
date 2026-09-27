@@ -1,4 +1,4 @@
-const correctPassword = "Kanarth"; // <--- Change password here if needed
+const correctPassword = "Kanarth"; // Password configured for Kanak
 
 const steps = [
     { title: "It's Your Special Day", desc: "A CINEMATIC JOURNEY CREATED JUST FOR YOU", btn: "NEXT" },
@@ -52,14 +52,29 @@ function nextStep() {
     }
 }
 
-/* Page Navigation Functions */
+/* Page Navigation & Reveal Functions */
 function showMemoriesTab() {
     document.getElementById('special-message-section').style.display = 'none';
-    document.getElementById('memories-section').style.display = 'flex';
+    document.getElementById('memory-page-0').style.display = 'flex';
+}
+
+function revealMemory(index) {
+    const cover = document.getElementById(`cover-${index}`);
+    const content = document.getElementById(`revealed-${index}`);
+    cover.style.opacity = '0';
+    setTimeout(() => {
+        cover.style.display = 'none';
+        content.style.display = 'block';
+    }, 300);
+}
+
+function nextMemoryPage(nextIndex) {
+    document.getElementById(`memory-page-${nextIndex - 1}`).style.display = 'none';
+    document.getElementById(`memory-page-${nextIndex}`).style.display = 'flex';
 }
 
 function showGiftTab() {
-    document.getElementById('memories-section').style.display = 'none';
+    document.getElementById('memory-page-5').style.display = 'none';
     document.getElementById('gift-section').style.display = 'flex';
 }
 
