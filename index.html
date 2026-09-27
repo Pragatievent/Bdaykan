@@ -50,49 +50,118 @@
             </div>
         </section>
 
-        <!-- Tab 2: Memories Gallery Section (6 Photos) -->
-        <section class="page-section" id="memories-section">
-            <h2 class="gallery-title">Moments in Time</h2>
-            <p class="gallery-subtitle">Tap any framed photo to zoom in</p>
-            <div class="gallery-grid">
-                <div class="memory-card" onclick="openModal('FirstChat.jpg', 'Our First Chat ... i am soo happy that is did😭🫶🏻💗')">
-                    <div class="image-frame">
+        <!-- Memory Page 1 -->
+        <section class="page-section memory-page" id="memory-page-0">
+            <div class="page-card memory-reveal-card">
+                <div class="cover-overlay" id="cover-0" onclick="revealMemory(0)">
+                    <span class="cover-icon">💌</span>
+                    <h2>Memory #1</h2>
+                    <p>Tap to open and reveal...</p>
+                </div>
+                <div class="revealed-content" id="revealed-0" style="display: none;">
+                    <h3 class="memory-page-title">Moment #1</h3>
+                    <div class="image-frame" onclick="openModal('FirstChat.jpg', 'Our First Chat ... i am soo happy that is did😭🫶🏻💗')">
                         <img src="FirstChat.jpg" alt="Memory" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb'">
                     </div>
                     <div class="memory-message">Our First Chat ... i am soo happy that is did😭🫶🏻💗</div>
+                    <button class="memories-btn next-page-btn" onclick="nextMemoryPage(1)">Next Memory ➔</button>
                 </div>
-                <div class="memory-card" onclick="openModal('Conf.jpg', 'The day i confessed my love for you 💗...it was also on your special day💕')">
-                    <div class="image-frame">
+            </div>
+        </section>
+
+        <!-- Memory Page 2 -->
+        <section class="page-section memory-page" id="memory-page-1">
+            <div class="page-card memory-reveal-card">
+                <div class="cover-overlay" id="cover-1" onclick="revealMemory(1)">
+                    <span class="cover-icon">💌</span>
+                    <h2>Memory #2</h2>
+                    <p>Tap to open and reveal...</p>
+                </div>
+                <div class="revealed-content" id="revealed-1" style="display: none;">
+                    <h3 class="memory-page-title">Moment #2</h3>
+                    <div class="image-frame" onclick="openModal('Conf.jpg', 'The day i confessed my love for you 💗...it was also on your special day💕')">
                         <img src="Conf.jpg" alt="Memory" onerror="this.src='https://images.unsplash.com/photo-1517841905240-472988babdf9'">
                     </div>
                     <div class="memory-message">The day i confessed my love for you 💗...it was also on your special day💕</div>
+                    <button class="memories-btn next-page-btn" onclick="nextMemoryPage(2)">Next Memory ➔</button>
                 </div>
-                <div class="memory-card" onclick="openModal('Conf2.jpg', 'The day u confessed😭🫶🏻💗...it was sooo special day for me...💕')">
-                    <div class="image-frame">
+            </div>
+        </section>
+
+        <!-- Memory Page 3 -->
+        <section class="page-section memory-page" id="memory-page-2">
+            <div class="page-card memory-reveal-card">
+                <div class="cover-overlay" id="cover-2" onclick="revealMemory(2)">
+                    <span class="cover-icon">💌</span>
+                    <h2>Memory #3</h2>
+                    <p>Tap to open and reveal...</p>
+                </div>
+                <div class="revealed-content" id="revealed-2" style="display: none;">
+                    <h3 class="memory-page-title">Moment #3</h3>
+                    <div class="image-frame" onclick="openModal('Conf2.jpg', 'The day u confessed😭🫶🏻💗...it was sooo special day for me...💕')">
                         <img src="Conf2.jpg" alt="Memory" onerror="this.src='https://images.unsplash.com/photo-1524504388940-b1c1722653e1'">
                     </div>
                     <div class="memory-message">The day u confessed😭🫶🏻💗...it was sooo special day for me...💕</div>
+                    <button class="memories-btn next-page-btn" onclick="nextMemoryPage(3)">Next Memory ➔</button>
                 </div>
-                <div class="memory-card" onclick="openModal('Prop.jpg', 'My official Proposal🫶🏻😭...yeahhh it was after 1 month of our relationship😅😂')">
-                    <div class="image-frame">
+            </div>
+        </section>
+
+        <!-- Memory Page 4 -->
+        <section class="page-section memory-page" id="memory-page-3">
+            <div class="page-card memory-reveal-card">
+                <div class="cover-overlay" id="cover-3" onclick="revealMemory(3)">
+                    <span class="cover-icon">💌</span>
+                    <h2>Memory #4</h2>
+                    <p>Tap to open and reveal...</p>
+                </div>
+                <div class="revealed-content" id="revealed-3" style="display: none;">
+                    <h3 class="memory-page-title">Moment #4</h3>
+                    <div class="image-frame" onclick="openModal('Prop.jpg', 'My official Proposal🫶🏻😭...yeahhh it was after 1 month of our relationship😅😂')">
                         <img src="Prop.jpg" alt="Memory" onerror="this.src='https://images.unsplash.com/photo-1494790108377-be9c29b29330'">
                     </div>
                     <div class="memory-message">My official Proposal🫶🏻😭...yeahhh it was after 1 month...</div>
+                    <button class="memories-btn next-page-btn" onclick="nextMemoryPage(4)">Next Memory ➔</button>
                 </div>
-                <div class="memory-card" onclick="openModal('FirstVC3.jpg', 'Our first Video Call❤️')">
-                    <div class="image-frame">
+            </div>
+        </section>
+
+        <!-- Memory Page 5 -->
+        <section class="page-section memory-page" id="memory-page-4">
+            <div class="page-card memory-reveal-card">
+                <div class="cover-overlay" id="cover-4" onclick="revealMemory(4)">
+                    <span class="cover-icon">💌</span>
+                    <h2>Memory #5</h2>
+                    <p>Tap to open and reveal...</p>
+                </div>
+                <div class="revealed-content" id="revealed-4" style="display: none;">
+                    <h3 class="memory-page-title">Moment #5</h3>
+                    <div class="image-frame" onclick="openModal('FirstVC3.jpg', 'Our first Video Call❤️')">
                         <img src="FirstVC3.jpg" alt="Memory" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d'">
                     </div>
                     <div class="memory-message">Our first Video Call❤️</div>
+                    <button class="memories-btn next-page-btn" onclick="nextMemoryPage(5)">Next Memory ➔</button>
                 </div>
-                <div class="memory-card" onclick="openModal('Growtg.jpg', 'Uss growing together with our...Endless love❤️')">
-                    <div class="image-frame">
+            </div>
+        </section>
+
+        <!-- Memory Page 6 -->
+        <section class="page-section memory-page" id="memory-page-5">
+            <div class="page-card memory-reveal-card">
+                <div class="cover-overlay" id="cover-5" onclick="revealMemory(5)">
+                    <span class="cover-icon">💌</span>
+                    <h2>Memory #6</h2>
+                    <p>Tap to open and reveal...</p>
+                </div>
+                <div class="revealed-content" id="revealed-5" style="display: none;">
+                    <h3 class="memory-page-title">Moment #6</h3>
+                    <div class="image-frame" onclick="openModal('Growtg.jpg', 'Uss growing together with our...Endless love❤️')">
                         <img src="Growtg.jpg" alt="Memory" onerror="this.src='https://images.unsplash.com/photo-1500648767791-00dcc994a43e'">
                     </div>
                     <div class="memory-message">Uss growing together with our...Endless love❤️</div>
+                    <button class="memories-btn next-page-btn" onclick="showGiftTab()">Next: Special Gift 🎁 ➔</button>
                 </div>
             </div>
-            <button class="memories-btn next-page-btn" onclick="showGiftTab()">Next: Special Gift 🎁 ➔</button>
         </section>
 
         <!-- Tab 3: Separate Gift Box Page -->
@@ -140,8 +209,8 @@
             </div>
         </div>
 
-        <!-- Audio Element -->
-        <audio id="birthday-audio" src="06. The Ronettes -  Be My Baby.mp3"></audio>
+        <!-- Audio Element with Loop Enabled -->
+        <audio id="birthday-audio" src="06. The Ronettes -  Be My Baby.mp3" loop></audio>
     </div>
 
     <script src="script.js"></script>
